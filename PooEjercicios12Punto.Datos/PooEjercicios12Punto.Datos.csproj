@@ -42,6 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioDePuntos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PooEjercicios12Punto.Entidades\PooEjercicios12Punto.Entidades.csproj">
+      <Project>{53d37738-f192-4870-bbf1-55327537c6f8}</Project>
+      <Name>PooEjercicios12Punto.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,18 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorDisponible.cs" />
-    <Compile Include="Cuadrante.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmListaDePuntos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmListaDePuntos.Designer.cs">
+      <DependentUpon>FrmListaDePuntos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPuntosEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPuntosEdit.Designer.cs">
+      <DependentUpon>FrmPuntosEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Punto.cs" />
-    <Compile Include="RepositorioDePuntos.cs" />
+    <EmbeddedResource Include="FrmListaDePuntos.resx">
+      <DependentUpon>FrmListaDePuntos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPuntosEdit.resx">
+      <DependentUpon>FrmPuntosEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,8 +74,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DiagramaDeClases.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,6 +88,55 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_file_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alphabetical_sorting_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_pane_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conversion_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_file_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guardar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\numeric_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restart_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reversed_numerical_sorting_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up_down_arrow_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PooEjercicios12Punto.Datos\PooEjercicios12Punto.Datos.csproj">
+      <Project>{8e7f7d97-1c22-4b3a-b4c5-46725bdb4d93}</Project>
+      <Name>PooEjercicios12Punto.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PooEjercicios12Punto.Entidades\PooEjercicios12Punto.Entidades.csproj">
+      <Project>{53d37738-f192-4870-bbf1-55327537c6f8}</Project>
+      <Name>PooEjercicios12Punto.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

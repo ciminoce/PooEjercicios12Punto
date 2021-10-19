@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorDisponible.cs" />
+    <Compile Include="Cuadrante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Punto.cs" />
+    <Compile Include="Trazo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
