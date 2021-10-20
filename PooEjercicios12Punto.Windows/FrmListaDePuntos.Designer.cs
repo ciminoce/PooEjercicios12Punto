@@ -31,6 +31,12 @@ namespace PooEjercicios12Punto.Windows
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
+            this.colX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTrazo2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCuadrante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadRegistrosLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BarraHerramientasToolStrip = new System.Windows.Forms.ToolStrip();
@@ -39,24 +45,14 @@ namespace PooEjercicios12Punto.Windows
             this.EditarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.FiltrarToolStripButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ladoMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MayorIgualLadoMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenorIgualLadoMayorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.IgualLadoMayorToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.queToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.OrdenarToolStripButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ascendentePorLadoMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.descendentePorLadoMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.descendentePorSuperficieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ActualizarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SalirToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.colX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrazo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrazo2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCuadrante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ascendentePorXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descendentePorXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ascedentePorYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.descendentePorYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -106,6 +102,46 @@ namespace PooEjercicios12Punto.Windows
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DatosDataGridView.Size = new System.Drawing.Size(1075, 444);
             this.DatosDataGridView.TabIndex = 0;
+            // 
+            // colX
+            // 
+            this.colX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colX.HeaderText = "Coord X";
+            this.colX.Name = "colX";
+            this.colX.ReadOnly = true;
+            // 
+            // colY
+            // 
+            this.colY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colY.HeaderText = "Coord Y";
+            this.colY.Name = "colY";
+            this.colY.ReadOnly = true;
+            // 
+            // colTrazo
+            // 
+            this.colTrazo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTrazo.HeaderText = "Trazo";
+            this.colTrazo.Name = "colTrazo";
+            this.colTrazo.ReadOnly = true;
+            // 
+            // colTrazo2
+            // 
+            this.colTrazo2.HeaderText = "Trazo Fino";
+            this.colTrazo2.Name = "colTrazo2";
+            this.colTrazo2.ReadOnly = true;
+            // 
+            // colColor
+            // 
+            this.colColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colColor.HeaderText = "Color";
+            this.colColor.Name = "colColor";
+            this.colColor.ReadOnly = true;
+            // 
+            // colCuadrante
+            // 
+            this.colCuadrante.HeaderText = "Cuadrante";
+            this.colCuadrante.Name = "colCuadrante";
+            this.colCuadrante.ReadOnly = true;
             // 
             // CantidadRegistrosLabel
             // 
@@ -184,8 +220,6 @@ namespace PooEjercicios12Punto.Windows
             // 
             // FiltrarToolStripButton
             // 
-            this.FiltrarToolStripButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ladoMayorToolStripMenuItem});
             this.FiltrarToolStripButton.Image = global::PooEjercicios12Punto.Windows.Properties.Resources.conversion_36px;
             this.FiltrarToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FiltrarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -194,48 +228,13 @@ namespace PooEjercicios12Punto.Windows
             this.FiltrarToolStripButton.Text = "Filtrar";
             this.FiltrarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // ladoMayorToolStripMenuItem
-            // 
-            this.ladoMayorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MayorIgualLadoMayorToolStripMenuItem,
-            this.MenorIgualLadoMayorToolStripMenuItem1,
-            this.IgualLadoMayorToolStripMenuItem2,
-            this.queToolStripMenuItem3});
-            this.ladoMayorToolStripMenuItem.Image = global::PooEjercicios12Punto.Windows.Properties.Resources.conversion_36px;
-            this.ladoMayorToolStripMenuItem.Name = "ladoMayorToolStripMenuItem";
-            this.ladoMayorToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.ladoMayorToolStripMenuItem.Text = "Lado Mayor";
-            // 
-            // MayorIgualLadoMayorToolStripMenuItem
-            // 
-            this.MayorIgualLadoMayorToolStripMenuItem.Name = "MayorIgualLadoMayorToolStripMenuItem";
-            this.MayorIgualLadoMayorToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.MayorIgualLadoMayorToolStripMenuItem.Text = ">= Que";
-            // 
-            // MenorIgualLadoMayorToolStripMenuItem1
-            // 
-            this.MenorIgualLadoMayorToolStripMenuItem1.Name = "MenorIgualLadoMayorToolStripMenuItem1";
-            this.MenorIgualLadoMayorToolStripMenuItem1.Size = new System.Drawing.Size(115, 22);
-            this.MenorIgualLadoMayorToolStripMenuItem1.Text = "<= Que";
-            // 
-            // IgualLadoMayorToolStripMenuItem2
-            // 
-            this.IgualLadoMayorToolStripMenuItem2.Name = "IgualLadoMayorToolStripMenuItem2";
-            this.IgualLadoMayorToolStripMenuItem2.Size = new System.Drawing.Size(115, 22);
-            this.IgualLadoMayorToolStripMenuItem2.Text = "= Que";
-            // 
-            // queToolStripMenuItem3
-            // 
-            this.queToolStripMenuItem3.Name = "queToolStripMenuItem3";
-            this.queToolStripMenuItem3.Size = new System.Drawing.Size(115, 22);
-            this.queToolStripMenuItem3.Text = "<> Que";
-            // 
             // OrdenarToolStripButton
             // 
             this.OrdenarToolStripButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ascendentePorLadoMayorToolStripMenuItem,
-            this.descendentePorLadoMayorToolStripMenuItem,
-            this.descendentePorSuperficieToolStripMenuItem});
+            this.ascendentePorXToolStripMenuItem,
+            this.descendentePorXToolStripMenuItem,
+            this.ascedentePorYToolStripMenuItem,
+            this.descendentePorYToolStripMenuItem});
             this.OrdenarToolStripButton.Image = global::PooEjercicios12Punto.Windows.Properties.Resources.up_down_arrow_36px;
             this.OrdenarToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.OrdenarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -243,24 +242,6 @@ namespace PooEjercicios12Punto.Windows
             this.OrdenarToolStripButton.Size = new System.Drawing.Size(63, 55);
             this.OrdenarToolStripButton.Text = "Ordenar";
             this.OrdenarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // ascendentePorLadoMayorToolStripMenuItem
-            // 
-            this.ascendentePorLadoMayorToolStripMenuItem.Name = "ascendentePorLadoMayorToolStripMenuItem";
-            this.ascendentePorLadoMayorToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.ascendentePorLadoMayorToolStripMenuItem.Text = "Ascendente por Lado Mayor";
-            // 
-            // descendentePorLadoMayorToolStripMenuItem
-            // 
-            this.descendentePorLadoMayorToolStripMenuItem.Name = "descendentePorLadoMayorToolStripMenuItem";
-            this.descendentePorLadoMayorToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.descendentePorLadoMayorToolStripMenuItem.Text = "Descendente por Lado Mayor";
-            // 
-            // descendentePorSuperficieToolStripMenuItem
-            // 
-            this.descendentePorSuperficieToolStripMenuItem.Name = "descendentePorSuperficieToolStripMenuItem";
-            this.descendentePorSuperficieToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
-            this.descendentePorSuperficieToolStripMenuItem.Text = "Descendente por Superficie";
             // 
             // ActualizarToolStripButton
             // 
@@ -288,45 +269,33 @@ namespace PooEjercicios12Punto.Windows
             this.SalirToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.SalirToolStripButton.Click += new System.EventHandler(this.SalirToolStripButton_Click);
             // 
-            // colX
+            // ascendentePorXToolStripMenuItem
             // 
-            this.colX.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colX.HeaderText = "Coord X";
-            this.colX.Name = "colX";
-            this.colX.ReadOnly = true;
+            this.ascendentePorXToolStripMenuItem.Name = "ascendentePorXToolStripMenuItem";
+            this.ascendentePorXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ascendentePorXToolStripMenuItem.Text = "Ascendente por X";
+            this.ascendentePorXToolStripMenuItem.Click += new System.EventHandler(this.ascendentePorXToolStripMenuItem_Click);
             // 
-            // colY
+            // descendentePorXToolStripMenuItem
             // 
-            this.colY.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colY.HeaderText = "Coord Y";
-            this.colY.Name = "colY";
-            this.colY.ReadOnly = true;
+            this.descendentePorXToolStripMenuItem.Name = "descendentePorXToolStripMenuItem";
+            this.descendentePorXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.descendentePorXToolStripMenuItem.Text = "Descendente por X";
+            this.descendentePorXToolStripMenuItem.Click += new System.EventHandler(this.descendentePorXToolStripMenuItem_Click);
             // 
-            // colTrazo
+            // ascedentePorYToolStripMenuItem
             // 
-            this.colTrazo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colTrazo.HeaderText = "Trazo";
-            this.colTrazo.Name = "colTrazo";
-            this.colTrazo.ReadOnly = true;
+            this.ascedentePorYToolStripMenuItem.Name = "ascedentePorYToolStripMenuItem";
+            this.ascedentePorYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ascedentePorYToolStripMenuItem.Text = "Ascedente por Y";
+            this.ascedentePorYToolStripMenuItem.Click += new System.EventHandler(this.ascedentePorYToolStripMenuItem_Click);
             // 
-            // colTrazo2
+            // descendentePorYToolStripMenuItem
             // 
-            this.colTrazo2.HeaderText = "Trazo Fino";
-            this.colTrazo2.Name = "colTrazo2";
-            this.colTrazo2.ReadOnly = true;
-            // 
-            // colColor
-            // 
-            this.colColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colColor.HeaderText = "Color";
-            this.colColor.Name = "colColor";
-            this.colColor.ReadOnly = true;
-            // 
-            // colCuadrante
-            // 
-            this.colCuadrante.HeaderText = "Cuadrante";
-            this.colCuadrante.Name = "colCuadrante";
-            this.colCuadrante.ReadOnly = true;
+            this.descendentePorYToolStripMenuItem.Name = "descendentePorYToolStripMenuItem";
+            this.descendentePorYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.descendentePorYToolStripMenuItem.Text = "Descendente por Y";
+            this.descendentePorYToolStripMenuItem.Click += new System.EventHandler(this.descendentePorYToolStripMenuItem_Click);
             // 
             // FrmListaDePuntos
             // 
@@ -365,15 +334,7 @@ namespace PooEjercicios12Punto.Windows
         private System.Windows.Forms.ToolStripButton EditarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripDropDownButton FiltrarToolStripButton;
-        private System.Windows.Forms.ToolStripMenuItem ladoMayorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MayorIgualLadoMayorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenorIgualLadoMayorToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem IgualLadoMayorToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem queToolStripMenuItem3;
         private System.Windows.Forms.ToolStripDropDownButton OrdenarToolStripButton;
-        private System.Windows.Forms.ToolStripMenuItem ascendentePorLadoMayorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem descendentePorLadoMayorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem descendentePorSuperficieToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton ActualizarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton SalirToolStripButton;
@@ -383,6 +344,10 @@ namespace PooEjercicios12Punto.Windows
         private System.Windows.Forms.DataGridViewCheckBoxColumn colTrazo2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCuadrante;
+        private System.Windows.Forms.ToolStripMenuItem ascendentePorXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem descendentePorXToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ascedentePorYToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem descendentePorYToolStripMenuItem;
     }
 }
 

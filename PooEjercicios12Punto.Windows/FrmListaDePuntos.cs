@@ -119,17 +119,58 @@ namespace PooEjercicios12Punto.Windows
 
         private void EditarToolStripButton_Click(object sender, EventArgs e)
         {
-            if (DatosDataGridView.SelectedRows.Count==0)
+            if (DatosDataGridView.SelectedRows.Count == 0)
             {
                 return;
             }
 
             var r = DatosDataGridView.SelectedRows[0];
-            Punto punto = (Punto) r.Tag;
-            Punto puntoCopia =(Punto) punto.Clone();
-            FrmPuntosEdit frm = new FrmPuntosEdit() {Text = "Editar Punto"};
-            frm.SetPunto(punto);
+            var punto = (Punto)r.Tag;
+            var puntoCopia = (Punto)punto.Clone();
+            FrmPuntosEdit frm = new FrmPuntosEdit();
+            frm.SetPunto(puntoCopia);
             DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            puntoCopia = frm.GetPunto();
+            if (repositorio.Existe(puntoCopia))
+            {
+                MessageBox.Show("Punto existente!!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            repositorio.Editar(punto, puntoCopia);
+            SetearFila(r, puntoCopia);
+            MessageBox.Show("Registro modificado");
+        }
+
+        private void ascendentePorXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lista = repositorio.GetListaOrdenadaPorXAsc();
+            MostrarDatosEnGrilla();
+        }
+
+        private void descendentePorXToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lista = repositorio.GetListaOrdenadaPorXDesc();
+            MostrarDatosEnGrilla();
+
+        }
+
+        private void ascedentePorYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lista = repositorio.GetListaOrdenadaPorYAsc();
+            MostrarDatosEnGrilla();
+
+        }
+
+        private void descendentePorYToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lista = repositorio.GetListaOrdenadaPorYDesc();
+            MostrarDatosEnGrilla();
+
         }
     }
 }

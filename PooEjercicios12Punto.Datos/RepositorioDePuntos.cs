@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using PooEjercicios12Punto.Entidades;
 
 namespace PooEjercicios12Punto.Datos
@@ -86,9 +87,33 @@ namespace PooEjercicios12Punto.Datos
             File.Move(_archivoBak, _archivo);
         }
 
-        public void Editar()
+        public void Editar(Punto puntoBuscado, Punto puntoModificado)
         {
-            throw new System.NotImplementedException();
+            EditarRegistroEnArchivo(puntoBuscado, puntoModificado);
+            int index = listaPuntos.IndexOf(puntoBuscado);
+            listaPuntos.RemoveAt(index);
+            listaPuntos.Insert(index, puntoModificado);
+        }
+
+        private void EditarRegistroEnArchivo(Punto puntoBuscado, Punto puntoModificado)
+        {
+            StreamReader lector = new StreamReader(_archivo);
+            StreamWriter escritor = new StreamWriter(_archivoBak);
+            while (!lector.EndOfStream)
+            {
+                var linea = lector.ReadLine();
+                var puntoEnArchivo = ConstruirPunto(linea);
+                if (puntoEnArchivo.Equals(puntoBuscado))
+                {
+                    linea = ConstruirLinea(puntoModificado);
+
+                }
+                escritor.WriteLine(linea);
+            }
+            escritor.Close();
+            lector.Close();
+            File.Delete(_archivo);
+            File.Move(_archivoBak, _archivo);
         }
 
         public int GetCantidad()
@@ -103,22 +128,22 @@ namespace PooEjercicios12Punto.Datos
 
         public List<Punto> GetListaOrdenadaPorXAsc()
         {
-            throw new System.NotImplementedException();
+            return listaPuntos.OrderBy(p => p.X).ThenBy(p => p.Y).ToList();
         }
 
         public List<Punto> GetListaOrdenadaPorXDesc()
         {
-            throw new System.NotImplementedException();
+            return listaPuntos.OrderByDescending(p => p.X).ThenByDescending(p => p.Y).ToList();
         }
 
         public List<Punto> GetListaOrdenadaPorYAsc()
         {
-            throw new System.NotImplementedException();
+            return listaPuntos.OrderBy(p => p.Y).ThenBy(p => p.X).ToList();
         }
 
         public List<Punto> GetListaOrdenadaPorYDesc()
         {
-            throw new System.NotImplementedException();
+            return listaPuntos.OrderByDescending(p => p.Y).ThenByDescending(p => p.X).ToList();
         }
 
         public List<Punto> Filtrar()
