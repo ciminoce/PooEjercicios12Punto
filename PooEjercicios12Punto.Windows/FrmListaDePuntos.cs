@@ -57,6 +57,8 @@ namespace PooEjercicios12Punto.Windows
             r.Cells[colTrazo2.Index].Value = punto.TrazoFino;
             r.Cells[colColor.Index].Value = punto.ColorDisponible;
             r.Cells[colCuadrante.Index].Value = punto.GetCuadrante();
+            r.Cells[colDistancia.Index].Value = punto.GetDistanciaAlOrigen();
+            r.Cells[colPolares.Index].Value = punto.GetCoordenadasPolares();
 
             r.Tag = punto;
         }

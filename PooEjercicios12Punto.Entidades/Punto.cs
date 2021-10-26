@@ -58,12 +58,14 @@ namespace PooEjercicios12Punto.Entidades
 
         public double GetDistanciaAlOrigen()
         {
-            throw new System.NotImplementedException();
+            return Math.Sqrt(Math.Pow(X, 2) + Math.Pow(Y, 2));
         }
 
         public string GetCoordenadasPolares()
         {
-            throw new System.NotImplementedException();
+            var distancia = GetDistanciaAlOrigen();
+            var theta = Math.Atan(Y / X);//pronunciece tita
+            return $"({distancia};{theta}";
         }
     }
 }

@@ -55,6 +55,8 @@ namespace PooEjercicios12Punto.Windows
             this.ActualizarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SalirToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.colDistancia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPolares = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,7 +97,9 @@ namespace PooEjercicios12Punto.Windows
             this.colTrazo,
             this.colTrazo2,
             this.colColor,
-            this.colCuadrante});
+            this.colCuadrante,
+            this.colDistancia,
+            this.colPolares});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.DatosDataGridView.MultiSelect = false;
@@ -237,7 +241,7 @@ namespace PooEjercicios12Punto.Windows
             this.cuadranteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CuadrantesToolStripComboBox});
             this.cuadranteToolStripMenuItem.Name = "cuadranteToolStripMenuItem";
-            this.cuadranteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cuadranteToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.cuadranteToolStripMenuItem.Text = "Cuadrante";
             // 
             // CuadrantesToolStripComboBox
@@ -317,6 +321,18 @@ namespace PooEjercicios12Punto.Windows
             this.SalirToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.SalirToolStripButton.Click += new System.EventHandler(this.SalirToolStripButton_Click);
             // 
+            // colDistancia
+            // 
+            this.colDistancia.HeaderText = "Dist. al Origen";
+            this.colDistancia.Name = "colDistancia";
+            this.colDistancia.ReadOnly = true;
+            // 
+            // colPolares
+            // 
+            this.colPolares.HeaderText = "Coord. Polares";
+            this.colPolares.Name = "colPolares";
+            this.colPolares.ReadOnly = true;
+            // 
             // FrmListaDePuntos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +386,8 @@ namespace PooEjercicios12Punto.Windows
         private System.Windows.Forms.ToolStripMenuItem descendentePorYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuadranteToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox CuadrantesToolStripComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDistancia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPolares;
     }
 }
 
