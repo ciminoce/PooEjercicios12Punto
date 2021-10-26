@@ -75,10 +75,26 @@ namespace PooEjercicios12Punto.Windows
 
         private void FrmListaDePuntos_Load(object sender, EventArgs e)
         {
+            CargarDatosComboCuadrantes();
             repositorio = new RepositorioDePuntos();
+            RecargarGrilla();
+        }
+
+        private void RecargarGrilla()
+        {
             lista = repositorio.GetLista();
             MostrarDatosEnGrilla();
             ActualizarCantidadRegistros(repositorio.GetCantidad());
+        }
+
+        private void CargarDatosComboCuadrantes()
+        {
+            var lista = Enum.GetValues(typeof(Cuadrante)).Cast<Cuadrante>().ToList();
+            foreach (var cuadrante in lista)
+            {
+                var palabras = cuadrante.ToString().Split('_');
+                CuadrantesToolStripComboBox.Items.Add($"{palabras[0]} {palabras[1]}");
+            }
         }
 
         private void ActualizarCantidadRegistros(int cantidad)
@@ -171,6 +187,24 @@ namespace PooEjercicios12Punto.Windows
             lista = repositorio.GetListaOrdenadaPorYDesc();
             MostrarDatosEnGrilla();
 
+        }
+
+        private void CuadrantesToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CuadrantesToolStripComboBox.SelectedIndex==-1)
+            {
+                return;
+            }
+
+            var cuadranteFiltro = CuadrantesToolStripComboBox.Text;
+            lista = repositorio.FiltrarPorCuadrante(cuadranteFiltro);
+            MostrarDatosEnGrilla();
+            ActualizarCantidadRegistros(repositorio.GetCantidad(cuadranteFiltro));
+        }
+
+        private void ActualizarToolStripButton_Click(object sender, EventArgs e)
+        {
+            RecargarGrilla();
         }
     }
 }

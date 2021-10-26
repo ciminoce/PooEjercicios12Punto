@@ -155,5 +155,28 @@ namespace PooEjercicios12Punto.Datos
         {
             return listaPuntos.Contains(punto);
         }
+
+        public List<Punto> FiltrarPorCuadrante(string cuadranteFiltro)
+        {
+            var listaFiltrada = new List<Punto>();
+            foreach (var punto in listaPuntos)
+            {
+                var cuadranteDelPunto = punto.GetCuadrante();
+                if (cuadranteDelPunto==cuadranteFiltro)
+                {
+                    listaFiltrada.Add(punto);
+                }
+            }
+
+            return listaFiltrada;
+
+        }
+
+        public int GetCantidad(string cuadranteFiltro)
+        {
+            return listaPuntos.Count(p => p.GetCuadrante() == cuadranteFiltro);
+        }
+
+        
     }
 }

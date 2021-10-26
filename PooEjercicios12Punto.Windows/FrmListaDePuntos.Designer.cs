@@ -45,14 +45,16 @@ namespace PooEjercicios12Punto.Windows
             this.EditarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.FiltrarToolStripButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.cuadranteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CuadrantesToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.OrdenarToolStripButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.ActualizarToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.SalirToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ascendentePorXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descendentePorXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ascedentePorYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descendentePorYToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ActualizarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.SalirToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -220,6 +222,8 @@ namespace PooEjercicios12Punto.Windows
             // 
             // FiltrarToolStripButton
             // 
+            this.FiltrarToolStripButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cuadranteToolStripMenuItem});
             this.FiltrarToolStripButton.Image = global::PooEjercicios12Punto.Windows.Properties.Resources.conversion_36px;
             this.FiltrarToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.FiltrarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -227,6 +231,21 @@ namespace PooEjercicios12Punto.Windows
             this.FiltrarToolStripButton.Size = new System.Drawing.Size(50, 55);
             this.FiltrarToolStripButton.Text = "Filtrar";
             this.FiltrarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // cuadranteToolStripMenuItem
+            // 
+            this.cuadranteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CuadrantesToolStripComboBox});
+            this.cuadranteToolStripMenuItem.Name = "cuadranteToolStripMenuItem";
+            this.cuadranteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cuadranteToolStripMenuItem.Text = "Cuadrante";
+            // 
+            // CuadrantesToolStripComboBox
+            // 
+            this.CuadrantesToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CuadrantesToolStripComboBox.Name = "CuadrantesToolStripComboBox";
+            this.CuadrantesToolStripComboBox.Size = new System.Drawing.Size(121, 23);
+            this.CuadrantesToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.CuadrantesToolStripComboBox_SelectedIndexChanged);
             // 
             // OrdenarToolStripButton
             // 
@@ -243,6 +262,34 @@ namespace PooEjercicios12Punto.Windows
             this.OrdenarToolStripButton.Text = "Ordenar";
             this.OrdenarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // ascendentePorXToolStripMenuItem
+            // 
+            this.ascendentePorXToolStripMenuItem.Name = "ascendentePorXToolStripMenuItem";
+            this.ascendentePorXToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.ascendentePorXToolStripMenuItem.Text = "Ascendente por X";
+            this.ascendentePorXToolStripMenuItem.Click += new System.EventHandler(this.ascendentePorXToolStripMenuItem_Click);
+            // 
+            // descendentePorXToolStripMenuItem
+            // 
+            this.descendentePorXToolStripMenuItem.Name = "descendentePorXToolStripMenuItem";
+            this.descendentePorXToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.descendentePorXToolStripMenuItem.Text = "Descendente por X";
+            this.descendentePorXToolStripMenuItem.Click += new System.EventHandler(this.descendentePorXToolStripMenuItem_Click);
+            // 
+            // ascedentePorYToolStripMenuItem
+            // 
+            this.ascedentePorYToolStripMenuItem.Name = "ascedentePorYToolStripMenuItem";
+            this.ascedentePorYToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.ascedentePorYToolStripMenuItem.Text = "Ascedente por Y";
+            this.ascedentePorYToolStripMenuItem.Click += new System.EventHandler(this.ascedentePorYToolStripMenuItem_Click);
+            // 
+            // descendentePorYToolStripMenuItem
+            // 
+            this.descendentePorYToolStripMenuItem.Name = "descendentePorYToolStripMenuItem";
+            this.descendentePorYToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.descendentePorYToolStripMenuItem.Text = "Descendente por Y";
+            this.descendentePorYToolStripMenuItem.Click += new System.EventHandler(this.descendentePorYToolStripMenuItem_Click);
+            // 
             // ActualizarToolStripButton
             // 
             this.ActualizarToolStripButton.Image = global::PooEjercicios12Punto.Windows.Properties.Resources.restart_36px;
@@ -252,6 +299,7 @@ namespace PooEjercicios12Punto.Windows
             this.ActualizarToolStripButton.Size = new System.Drawing.Size(63, 55);
             this.ActualizarToolStripButton.Text = "Actualizar";
             this.ActualizarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.ActualizarToolStripButton.Click += new System.EventHandler(this.ActualizarToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -268,34 +316,6 @@ namespace PooEjercicios12Punto.Windows
             this.SalirToolStripButton.Text = "Salir";
             this.SalirToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.SalirToolStripButton.Click += new System.EventHandler(this.SalirToolStripButton_Click);
-            // 
-            // ascendentePorXToolStripMenuItem
-            // 
-            this.ascendentePorXToolStripMenuItem.Name = "ascendentePorXToolStripMenuItem";
-            this.ascendentePorXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ascendentePorXToolStripMenuItem.Text = "Ascendente por X";
-            this.ascendentePorXToolStripMenuItem.Click += new System.EventHandler(this.ascendentePorXToolStripMenuItem_Click);
-            // 
-            // descendentePorXToolStripMenuItem
-            // 
-            this.descendentePorXToolStripMenuItem.Name = "descendentePorXToolStripMenuItem";
-            this.descendentePorXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.descendentePorXToolStripMenuItem.Text = "Descendente por X";
-            this.descendentePorXToolStripMenuItem.Click += new System.EventHandler(this.descendentePorXToolStripMenuItem_Click);
-            // 
-            // ascedentePorYToolStripMenuItem
-            // 
-            this.ascedentePorYToolStripMenuItem.Name = "ascedentePorYToolStripMenuItem";
-            this.ascedentePorYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ascedentePorYToolStripMenuItem.Text = "Ascedente por Y";
-            this.ascedentePorYToolStripMenuItem.Click += new System.EventHandler(this.ascedentePorYToolStripMenuItem_Click);
-            // 
-            // descendentePorYToolStripMenuItem
-            // 
-            this.descendentePorYToolStripMenuItem.Name = "descendentePorYToolStripMenuItem";
-            this.descendentePorYToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.descendentePorYToolStripMenuItem.Text = "Descendente por Y";
-            this.descendentePorYToolStripMenuItem.Click += new System.EventHandler(this.descendentePorYToolStripMenuItem_Click);
             // 
             // FrmListaDePuntos
             // 
@@ -348,6 +368,8 @@ namespace PooEjercicios12Punto.Windows
         private System.Windows.Forms.ToolStripMenuItem descendentePorXToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ascedentePorYToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem descendentePorYToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuadranteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripComboBox CuadrantesToolStripComboBox;
     }
 }
 
